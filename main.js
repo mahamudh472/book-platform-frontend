@@ -22,20 +22,32 @@ document.getElementById('menuToggle').addEventListener('click', function(){
     });
 })
 
+// --------------------------------------------------
+// ----------------- Dropdown menu-------------------
+// --------------------------------------------------
 
-
-// Get the elements
-const dropdownButton = document.getElementById('dropdownButton');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-// Add click event listener to the button
-dropdownButton.addEventListener('click', () => {
-  dropdownMenu.classList.toggle('hidden'); // Show/Hide the menu
+// Handle dropdown toggle
+document.querySelectorAll('.dropdownButton').forEach(button => {
+  console.log(button)
+  button.addEventListener('click', function (event) {
+      event.stopPropagation(); // Prevent the event from propagating to the document
+      const menu = this.nextElementSibling; // Get the corresponding dropdown menu
+      menu.classList.toggle('hidden');
+      // Close other open dropdowns
+      document.querySelectorAll('.dropdownMenu').forEach(otherMenu => {
+          if (otherMenu !== menu) {
+              otherMenu.classList.add('hidden');
+          }
+      });
+  });
 });
 
-// Close the menu when clicking outside
+// Close dropdowns when clicking outside
 document.addEventListener('click', (event) => {
-  if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    dropdownMenu.classList.add('hidden');
-  }
+  document.querySelectorAll('.dropdownMenu').forEach(menu => {
+      if (!menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+      }
+  });
 });
+
