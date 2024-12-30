@@ -237,8 +237,9 @@
                     <h2 class="text-3xl font-semibold">Channel Dashboard</h2>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <input type="text" placeholder="Search across your channel" class="px-4 py-2 border rounded-md">
-                    <img src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-full">
+                    <button class="h-10 w-10 border border-gray-300 bg-white p-2 hover:bg-gray-100 rounded-full"><i class="fa fa-upload"></i></button>
+                    <button class="h-10 w-10 border border-gray-300 bg-white p-2 hover:bg-gray-100 rounded-full"><i class="fa fa-tower-broadcast"></i></button>
+                    <button class="h-10 w-10 border border-gray-300 bg-white p-2 hover:bg-gray-100 rounded-full"><i class="fa-regular fa-pen-to-square"></i></button>
                 </div>
             </header>
 
@@ -285,7 +286,7 @@
 
                     <!-- Published Videos -->
                     <div class="bg-white shadow-md p-4 rounded-md">
-                        <h3 class="text-lg font-bold mb-2">Published Videos</h3>
+                        <h3 class="text-lg font-bold mb-2">Published Books</h3>
                         <ul class="text-gray-600 space-y-2">
                             <li>My Kaku! Who is a Famous Video Creator</li>
                             <li>Subscription Gera</li>
@@ -298,11 +299,44 @@
                 <!-- column 2 -->
                 <div class="flex flex-col gap-4">
                     <!-- Channel Analytics -->
-                    <div class="bg-white shadow-md p-4 rounded-md">
+                    <div class="bg-white shadow-md p-4 rounded-md space-y-3">
                         <h3 class="text-lg font-bold mb-2">Channel Analytics</h3>
-                        <p class="text-gray-600">Current Subscribers: 1,810</p>
-                        <p class="text-gray-600">Views: 2 in last 28 days</p>
-                        <p class="text-gray-600">Watch Time: 0 hours</p>
+                        <p class="font-medium text-sm">Current Subscribers</p>
+                        <div class="text-5xl">2,089</div>
+                        <div class="text-gray-600 text-sm">
+                            <span class="text-red-600 hidden">-2</span>
+                            <span class="text-green-600">+116</span>
+                            in last 28 days
+
+                        </div>
+                        <hr class="py-2">
+                        <div class="space-y-3">
+                            <div class="text-sm space-y-1">
+                                <div class="font-bold">Summary</div>
+                                <div class="text-gray-600">Last 28 days</div>
+                            </div>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex justify-between">
+                                    <div>Views</div>
+                                    <div>8.5k<button class="fa-regular fa-circle-check pl-1 text-green-600"></button></div>
+                                </li>
+                                <li class="flex justify-between">
+                                    <div>Watch time(hours)</div>
+                                    <div>435.8 <button class="fa-regular fa-circle-xmark text-red-600 pl-1"></button></div>
+                                </li>
+                                <li class="flex justify-between">
+                                    <div>Your estimated Revenew</div>
+                                    <div>14.5$ <button class="fa fa-circle-minus pl-1 text-gray-500"></button></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr class="py-2">
+                        <div>
+                            <div class="text-sm space-y-1">
+                                <div class="font-bold">Summary</div>    
+                                <div class="text-gray-600">Last 48 hours - Views</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Latest Comments -->
