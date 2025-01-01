@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouTube Homepage</title>
-    <link rel="stylesheet" href="./dist/output.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-gray-100">
+
     <!-- Header (Navigation Bar) -->
     <header class="bg-white shadow-md sticky top-0 z-50 px-4">
         <div class="flex items-center justify-between py-3">
             <!-- Logo and Hamburger -->
-            <div class="flex items-center space-x-4" id="menuToggle">
-                <button class="px-2 rounded hover:bg-gray-200">
+            <div class="flex items-center space-x-4">
+                <button class="px-2 pt-1 rounded hover:bg-gray-200" id="menuToggle">
                     <i class="fa fa-bars text-2xl"></i>
                 </button>
                 <!-- <img src="https://via.placeholder.com/100x40?text=YouTube" alt="YouTube Logo" class="h-8"> -->
-                <div class="text-md p-2 border border-gray-300 rounded-full">
-                    Bookish
-                </div>
+                <a href="admin dashboard.html">
+                    <img src="logo.png" class="h-12" alt=""></a>
             </div>
 
             <!-- Search Bar -->
             <div class="md:flex items-center justify-center mx-4 flex-grow">
                 <input type="text" placeholder="Search"
-                    class="w-2/4 border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none" />
+                    class="w-2/4 border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none">
                 <button
                     class="px-5 py-2 bg-gray-100 border-t border-b border-r border-gray-300 rounded-r-full hover:bg-gray-200">
                     <i class="fa fa-search"></i>
@@ -67,79 +67,132 @@
                 </div>
 
                 <div class="relative">
-                    <button class="dropdownButton text-lg fa-regular fa-bell"></button>
+                    <button class="dropdownButton text-lg fa-regular fa-bell">
+                    </button>
                     <div id="dropdownMenu"
-                        class="dropdownMenu absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        class="dropdownMenu absolute right-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
                         <ul class="py-1">
                             <li>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 ">
                                     <div class="flex space-x-2">
                                         <img class="h-10 w-10 rounded-full"
                                             src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
-                                            alt="" />
+                                            alt="">
                                         <div>
-                                            <div>This is notification title</div>
-                                            <div class="text-xs font-thin">
-                                                ATN News -10 minutes ago
-                                            </div>
+                                            <div class="text-sm">This is notification title</div>
+                                            <div class="text-xs font-thin">ATN News -10 minutes ago</div>
                                         </div>
+
                                     </div>
                                 </a>
-                                <hr />
+                                <hr>
                                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                     <div class="flex space-x-2">
                                         <img class="h-10 w-10 rounded-full"
                                             src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
-                                            alt="" />
+                                            alt="">
                                         <div>
-                                            <div>This is notification title</div>
-                                            <div class="text-xs font-thin">
-                                                ATN News -10 minutes ago
-                                            </div>
+                                            <div class="text-sm">This is notification title</div>
+                                            <div class="text-xs font-thin">ATN News -10 minutes ago</div>
                                         </div>
+
                                     </div>
                                 </a>
-                                <hr />
+                                <hr>
                                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                     <div class="flex space-x-2">
                                         <img class="h-10 w-10 rounded-full"
                                             src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
-                                            alt="" />
-                                        <div>
+                                            alt="">
+                                        <div class="text-sm">
                                             <div>This is notification title</div>
-                                            <div class="text-xs font-thin">
-                                                ATN News -10 minutes ago
-                                            </div>
+                                            <div class="text-xs font-thin">ATN News -10 minutes ago</div>
                                         </div>
+
                                     </div>
                                 </a>
-                                <hr />
+                                <hr>
                                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                     <div class="flex space-x-2">
                                         <img class="h-10 w-10 rounded-full"
                                             src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
-                                            alt="" />
+                                            alt="">
                                         <div>
-                                            <div>This is notification title</div>
-                                            <div class="text-xs font-thin">
-                                                ATN News -10 minutes ago
-                                            </div>
+                                            <div class="text-sm">This is notification title</div>
+                                            <div class="text-xs font-thin">ATN News -10 minutes ago</div>
                                         </div>
+
                                     </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="p-2 rounded-full hover:bg-gray-200 dropdownButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2a10 10 0 110 20 10 10 0 010-20zm1 10.586l4.243 4.242-1.414 1.415L12 13.415l-3.829 3.828-1.415-1.415L11 10.586V6h2v4.586z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- !-- Dropdown Menu -->
+                    <div id="dropdownMenu"
+                        class="dropdownMenu absolute right-0 mt-2 w-60 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        <ul class="py-1">
+                            <li class="border-b">
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">
+                                    <div class="flex space-x-2">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
+                                            alt="">
+                                        <div>
+                                            <div class="text-sm">Channel Name</div>
+                                            <div class="text-xs">@username123</div>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-home mr-2"></i> Your channel
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-book mr-2"></i> Bookish
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-repeat mr-2"></i> Switch Account
+                                </a>
+                            </li>
+                            <li class="border-b">
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-door-open mr-2"></i> Sign out
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-moon mr-2"></i> Appearence
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-6 py-2 text-gray-700 hover:bg-gray-100">
+                                    <i class="fa fa-message mr-2"></i> Feedback
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <button class="p-2 rounded-full hover:bg-gray-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 2a10 10 0 110 20 10 10 0 010-20zm1 10.586l4.243 4.242-1.414 1.415L12 13.415l-3.829 3.828-1.415-1.415L11 10.586V6h2v4.586z">
-                        </path>
-                    </svg>
-                </button>
+
 
                 <!-- Guest view  -->
                 <div class="relative hidden">
@@ -180,58 +233,63 @@
     <!-- Main Content -->
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-        <aside class="hidden md:block pt-20 fixed left-0 top-0 h-full w-64 bg-white shadow-lg p-4 overflow-y-auto"
+        <aside
+            class="hidden md:block pt-20 fixed left-0 top-0 h-full w-64 bg-white shadow-lg p-4 overflow-y-auto transform -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0"
             id="sidebar">
             <nav>
-                <ul class="space-y-1 text-sm">
+                <ul class="space-y-1 text-sm" id="sidebarItems">
                     <li class="flex flex-col justify-center items-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                            class="h-24 w-24 rounded-full mb-2" alt="" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" id="sidebar_profile_img"
+                            class="h-24 w-24 rounded-full mb-2 transition-all duration-300" alt="">
                         <div class="text-sm font-bold">Your channel</div>
                         <div class="text-sm font-thin">One man studio</div>
                     </li>
-                    <li onclick="location.href='admin dashboard.html'"
-                        class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li onclick="location.href=`admin dashboard.html`"
+                        class="flex items-center space-x-3 p-2 rounded-lg transition-all delay-300 hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-table-columns text-lg w-6"></i>
                         <span class="text-gray-700">Dashboard</span>
                     </li>
-                    <li
-                        class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item font-bold bg-gray-100">
+                    <li onclick="location.href=`admin_content.html`"
+                        class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item  font-bold bg-gray-100">
                         <i class="fa fa-play text-lg w-6"></i>
                         <span class="text-gray-700">Content</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-list w-6"></i>
                         <span class="text-gray-700">Analytics</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-message w-6"></i>
                         <span class="text-gray-700">Comments</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa-regular fa-closed-captioning w-6"></i>
                         <span class="text-gray-700">Subtitles</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa-regular fa-copyright w-6"></i>
                         <span class="text-gray-700">Copyright</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-dollar-sign w-6"></i>
                         <span class="text-gray-700">Earn</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-paint-roller w-6"></i>
                         <span class="text-gray-700">Customization</span>
                     </li>
+
 
                     <!-- Add more menu items here -->
                 </ul>
             </nav>
         </aside>
 
+
+
         <!-- Main Content -->
-        <main class="flex-1 p-4 ml-64">
+        <main class="flex-1 p-4 ml-64 transition-all delay-100 ease-in-out">
+
             <header class="flex items-center justify-between mb-6">
                 <div>
                     <h2 class="text-3xl font-semibold">Channel Content</h2>
@@ -276,8 +334,9 @@
                         <!-- Content item row -->
                         <!-- ------------------------ -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-                                <input type="checkbox" name="" id=""/>
+                            <th scope="col"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
+                                <input type="checkbox" name="" id="" />
                                 <img src="book images/img1.jpg" alt="" class="h-20 w-12 object-cover" />
                                 <div class="text-sm">
                                     <div class="font-bold">Lorem ipsum dolor sit amet.</div>
@@ -289,11 +348,10 @@
                             </th>
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i
-                                    class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
+                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
                             </td>
                             <td class="px-2 py-6">None</td>
-                            
+
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <div class="">
                                     <div class="font-bold">Oct 15, 2024</div>
@@ -316,8 +374,9 @@
                         <!-- Content item row -->
                         <!-- ------------------------ -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-                                <input type="checkbox" name="" id=""/>
+                            <th scope="col"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
+                                <input type="checkbox" name="" id="" />
                                 <img src="book images/img2.jpg" alt="" class="h-20 w-12 object-cover" />
                                 <div class="text-sm">
                                     <div class="font-bold">Lorem ipsum dolor sit amet.</div>
@@ -329,51 +388,10 @@
                             </th>
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i
-                                    class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
+                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
                             </td>
                             <td class="px-2 py-6">None</td>
-                            
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div >
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
 
-
-                        </tr>
-
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-                                <input type="checkbox" name="" id=""/>
-                                <img src="book images/img3.jpg" alt="" class="h-20 w-12 object-cover" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i
-                                    class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <div>
                                     <div class="font-bold">Oct 15, 2024</div>
@@ -396,8 +414,49 @@
                         <!-- Content item row -->
                         <!-- ------------------------ -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-                                <input type="checkbox" name="" id=""/>
+                            <th scope="col"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
+                                <input type="checkbox" name="" id="" />
+                                <img src="book images/img3.jpg" alt="" class="h-20 w-12 object-cover" />
+                                <div class="text-sm">
+                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
+                                    <div class="text-gray-600">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iste, cupiditate.
+                                    </div>
+                                </div>
+                            </th>
+                            <td class="px-2 py-4 whitespace-nowrap">
+                                <i class="fa fa-earth-asia"></i> <span>Public</span>
+                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
+                            </td>
+                            <td class="px-2 py-6">None</td>
+
+                            <td class="px-2 py-4 whitespace-nowrap">
+                                <div>
+                                    <div class="font-bold">Oct 15, 2024</div>
+                                    <div class="text-gray-600">Published</div>
+                                </div>
+                            </td>
+                            <td class="px-2 py-4 text-end">3</td>
+                            <td class="px-2 py-4 text-end">0</td>
+                            <td class="px-2 py-4 text-end">
+                                <div class="text-sm">
+                                    <div class="font-bold">100%</div>
+                                    <div class="text-gray-600">2 Likes</div>
+                                </div>
+                            </td>
+
+
+                        </tr>
+
+                        <!-- ------------------------ -->
+                        <!-- Content item row -->
+                        <!-- ------------------------ -->
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
+                            <th scope="col"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
+                                <input type="checkbox" name="" id="" />
                                 <img src="book images/img4.jpeg" alt="" class="h-20 w-12 object-cover" />
                                 <div class="text-sm">
                                     <div class="font-bold">Lorem ipsum dolor sit amet.</div>
@@ -409,11 +468,10 @@
                             </th>
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i
-                                    class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
+                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
                             </td>
                             <td class="px-2 py-6">None</td>
-                            
+
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <div class="">
                                     <div class="font-bold">Oct 15, 2024</div>
@@ -436,8 +494,9 @@
                         <!-- Content item row -->
                         <!-- ------------------------ -->
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-                                <input type="checkbox" name="" id=""/>
+                            <th scope="col"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
+                                <input type="checkbox" name="" id="" />
                                 <img src="book images/img5.jpg" alt="" class="h-20 w-12 object-cover" />
                                 <div class="text-sm">
                                     <div class="font-bold">Lorem ipsum dolor sit amet.</div>
@@ -449,11 +508,10 @@
                             </th>
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i
-                                    class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
+                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
                             </td>
                             <td class="px-2 py-6">None</td>
-                            
+
                             <td class="px-2 py-4 whitespace-nowrap">
                                 <div class="">
                                     <div class="font-bold">Oct 15, 2024</div>
@@ -471,20 +529,19 @@
 
 
                         </tr>
-
-                        
-                        
-                        
                     </tbody>
                 </table>
             </div>
             <div class="flex">
-                
+
             </div>
+
+
         </main>
+
     </div>
 
-    <script src="main.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>
