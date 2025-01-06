@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Bookish - Homepage</title>
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -22,7 +22,7 @@
                     <i class="fa fa-bars text-2xl"></i>
                 </button>
                 <!-- <img src="https://via.placeholder.com/100x40?text=YouTube" alt="YouTube Logo" class="h-8"> -->
-                <a href="admin dashboard.html">
+                <a href="admin_dashboard.html">
                     <img src="logo.png" class="h-12" alt=""></a>
             </div>
 
@@ -244,21 +244,22 @@
                         <div class="text-sm font-bold">Your channel</div>
                         <div class="text-sm font-thin">One man studio</div>
                     </li>
-                    <li onclick="location.href=`admin dashboard.html`"
-                        class="flex items-center space-x-3 p-2 rounded-lg transition-all delay-300 hover:bg-gray-200 cursor-pointer menu-item font-bold bg-gray-100">
+                    <li onclick="location.href=`admin_dashboard.html`" data-page="admin_dashboard"
+                        class="flex items-center space-x-3 p-2 rounded-lg transition-all hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-table-columns text-lg w-6"></i>
                         <span class="text-gray-700">Dashboard</span>
                     </li>
-                    <li onclick="location.href=`admin_content.html`"
+                    <li onclick="location.href=`admin_content.html`" data-page="admin_content"
                         class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-play text-lg w-6"></i>
                         <span class="text-gray-700">Content</span>
                     </li>
-                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
+                    <li onclick="location.href=`admin_analytics.html`" data-page="admin_analytics"
+                    class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-list w-6"></i>
                         <span class="text-gray-700">Analytics</span>
                     </li>
-                    <li onclick="location.href=`admin_community.html`"
+                    <li onclick="location.href=`admin_community.html`" data-page="admin_community"
                     class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer menu-item">
                         <i class="fa fa-message w-6"></i>
                         <span class="text-gray-700">Community</span>
@@ -285,7 +286,7 @@
 
 
         <!-- Main Content -->
-        <main class="flex-1 p-4 ml-64 transition-all delay-100 ease-in-out">
+        <main class="flex-1 p-4 ml-64 transition-all delay-100 ease-in-out" id="content">
 
             Content area.
 

@@ -263,246 +263,135 @@
         </aside>
         <!-- Main Content -->
         <main class="flex-1 p-4 ml-64 transition-all delay-100 ease-in-out" id="content">
+
             <header class="flex items-center justify-between mb-6">
                 <div>
-                    <h2 class="text-3xl font-semibold">Channel Content</h2>
+                    <h2 class="text-3xl font-semibold">Channel analytics</h2>
                 </div>
+                <button class="py-2 px-4 bg-gray-100 rounded-full text-sm font-medium hover:bg-gray-200">Advanced
+                    Mode</button>
             </header>
-            <ul class="flex gap-4 font-medium text-gray-600 border-b-2">
-                <li class="p-2 cursor-pointer text-black border-b-2 font-bold border-gray-500">
-                    Books
-                </li>
-                <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-                    Shorts
-                </li>
-                <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-                    Live
-                </li>
-                <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-                    Posts
-                </li>
-                <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-                    Playlist
-                </li>
-            </ul>
-            <div class="relative overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th class="px-6 py-5 flex gap-3 items-center border-r h-full" scope="col">
-                                <input id="" name="" type="checkbox" /> Books
-                            </th>
-                            <th class="px-2 py-3" scope="col">Visibility</th>
-                            <th class="px-2 py-3" scope="col">Restrictions</th>
-                            <th class="px-2 py-3" scope="col">Date</th>
-                            <th class="px-2 py-3" scope="col">Views</th>
-                            <th class="px-2 py-3" scope="col">Comments</th>
-                            <th class="px-2 py-3 text-end" scope="col">Likes(vs Dislikes)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r"
-                                scope="col">
-                                <input id="" name="" type="checkbox" />
-                                <img alt="" class="h-20 w-12 object-cover" src="book images/img1.jpg" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div class="">
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r"
-                                scope="col">
-                                <input id="" name="" type="checkbox" />
-                                <img alt="" class="h-20 w-12 object-cover" src="book images/img2.jpg" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div>
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r"
-                                scope="col">
-                                <input id="" name="" type="checkbox" />
-                                <img alt="" class="h-20 w-12 object-cover" src="book images/img3.jpg" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div>
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r"
-                                scope="col">
-                                <input id="" name="" type="checkbox" />
-                                <img alt="" class="h-20 w-12 object-cover" src="book images/img4.jpeg" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div class="">
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- ------------------------ -->
-                        <!-- Content item row -->
-                        <!-- ------------------------ -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-                            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r"
-                                scope="col">
-                                <input id="" name="" type="checkbox" />
-                                <img alt="" class="h-20 w-12 object-cover" src="book images/img5.jpg" />
-                                <div class="text-sm">
-                                    <div class="font-bold">Lorem ipsum dolor sit amet.</div>
-                                    <div class="text-gray-600">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, cupiditate.
-                                    </div>
-                                </div>
-                            </th>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <i class="fa fa-earth-asia"></i> <span>Public</span>
-                                <i class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-                            </td>
-                            <td class="px-2 py-6">None</td>
-                            <td class="px-2 py-4 whitespace-nowrap">
-                                <div class="">
-                                    <div class="font-bold">Oct 15, 2024</div>
-                                    <div class="text-gray-600">Published</div>
-                                </div>
-                            </td>
-                            <td class="px-2 py-4 text-end">3</td>
-                            <td class="px-2 py-4 text-end">0</td>
-                            <td class="px-2 py-4 text-end">
-                                <div class="text-sm">
-                                    <div class="font-bold">100%</div>
-                                    <div class="text-gray-600">2 Likes</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="flex text-sm justify-end gap-6 p-4 bg-white border-b items-center text-gray-600">
-                <div class="flex items-center gap-2">
-                    <div>Rows per page</div>
-                    <select
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        id="" name="">
-                        <option value="">10</option>
-                        <option value="">30</option>
-                        <option value="">50</option>
-                    </select>
+            <div class="flex justify-between items-end border-b">
+                <ul class="flex gap-4 font-medium text-gray-600 text-sm">
+                    <li class="p-2 cursor-pointer text-black border-b-2 font-bold border-gray-500">
+                        Overview
+                    </li>
+                    <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
+                        Content
+                    </li>
+                    <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
+                        Audience
+                    </li>
+                    <li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
+                        Trends
+                    </li>
+
+                </ul>
+                <div class="relative pb-2">
+                    <div class="flex gap-6 cursor-pointer dropdownButton">
+                        <div class="text-xs"> Oct 5, 2024 - Jan 05, 2025 <div class="text-sm">Last 90 days</div>
+                        </div>
+                        <button><i class="fa fa-chevron-down p-2 rounded-full"></i></button>
+                    </div>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdownMenu absolute right-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden"
+                        id="dropdownMenu">
+                        <ul class="py-1">
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Last 7 days
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Last 28 days
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Last 90 days
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Last 365 days
+                                </a>
+                            </li>
+                            <li class="border-b">
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Lifetime
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    2024
+                                </a>
+                            </li>
+                            <li class="border-b">
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    2025
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Custom
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>1-9 of 9</div>
-                <i class="fa fa-angles-left block cursor-pointer" title="First page"></i>
-                <i class="fa fa-angle-left block cursor-pointer" title="Previous page"></i>
-                <i class="fa fa-angle-right block cursor-pointer" title="Next page"></i>
-                <i class="fa fa-angles-right block cursor-pointer" title="Last page"></i>
+
             </div>
+            <div class="flex gap-4">
+                <div class="w-9/12">
+                    <div class="text-center text-3xl font-medium py-6">
+                        Your channel got 20 views in last 90 days
+                    </div>
+                    <div class="border rounded-xl">
+                        <div class="grid grid-cols-3">
+                            <div class="text-center border-r space-y-2 my-2 p-2 cursor-pointer">
+                                <div class="text-sm">Views</div>
+                                <div class="text-xl">20 <i class="fa fa-circle-arrow-down text-gray-400"></i></div> 
+                                <div class="text-sm text-black opacity-80">82% less then previous 90days</div>
+                            </div>
+                            <div class="text-center border-r space-y-2 my-2 p-2 cursor-pointer bg-gray-50">
+                                <div class="text-sm">Watch time(hours)</div>
+                                <div class="text-xl">0.4 <i class="fa fa-circle-arrow-down text-gray-400"></i></div> 
+                                <div class="text-sm text-black opacity-80">82% less then previous 90days</div>
+                            </div>
+                            <div class="text-center space-y-2 my-2 p-2 cursor-pointer bg-gray-50">
+                                <div class="text-sm">Subscribers</div>
+                                <div class="text-xl">+2 <i class="fa fa-circle-arrow-down text-gray-400"></i></div> 
+                                <div class="text-sm text-black opacity-80">82% less then previous 90days</div>
+                            </div>
+                        </div>
+                        <canvas id="myChart" class="h-72 px-6"></canvas>
+                        <button class="py-2 px-4 mx-6 my-3 rounded-full bg-gray-100 hover:bg-gray-200 font-medium text-sm">See more</button>
+                    </div>
+                </div>
+                <div class="w-3/12">
+                    <div class="border rounded-xl my-4 p-2 px-4">
+                        <div class="font-bold text-lg">Realtime</div>
+                        <div class="text-sm font-light">Updating live</div>
+                        <hr class="my-4">
+                        <div class="font-bold text-lg">14</div>
+                        <div class="text-sm font-light">Subscribers</div>
+                        <button class="py-2 px-4 bg-gray-100 hover:bg-gray-200 rounded-full font-medium text-sm my-2">See live count</button>
+                        <hr class="my-2">
+                        <div class="font-medium text-lg">0</div>
+                        <div class="text-sm font-light">Views - last 48 hours</div>
+                        <button class="py-2 px-4 bg-gray-100 hover:bg-gray-200 rounded-full font-medium text-sm my-2">See more</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+
         </main>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="admin.js"></script>
 </body>
 
