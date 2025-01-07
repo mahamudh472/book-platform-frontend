@@ -48,6 +48,8 @@ target_files = [
     "admin_dashboard.html", 
     "admin_community.html", 
     "admin_content.html",
-    "admin_analytics.html"
+    "admin_analytics.html",
+    "admin_copyright.html",
+    "admin_earn.html",
     ]
 update_structure(template_file, target_files)
