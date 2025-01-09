@@ -12,7 +12,6 @@ document.getElementById('menuToggle').addEventListener('click', function(){
     cardGrid.classList.toggle('ml-64')
     cardGrid.classList.toggle('ml-24')
 
-    console.log(menuItems)
     Array.from(menuItems).forEach(element => {
         element.classList.toggle('flex-col')
         element.classList.toggle('text-xs')

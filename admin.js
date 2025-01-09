@@ -6,6 +6,7 @@ document.getElementById("menuToggle").addEventListener('click', () => {
     const sidebarImg = document.getElementById('sidebar_profile_img')
     const mainContainer = document.querySelector('main')
     const sidebarItems = document.querySelector('#sidebarItems')
+    const backText = document.getElementById('back_text')
 
     // sidebar and content box sizing
     sidebar.classList.toggle('w-64')
@@ -22,6 +23,11 @@ document.getElementById("menuToggle").addEventListener('click', () => {
     sidebarImg.classList.toggle('w-24')
     sidebarImg.classList.toggle('h-10')
     sidebarImg.classList.toggle('w-10')
+    sidebarImg.classList.toggle('m-auto')
+
+    if(backText){
+        backText.classList.toggle('hidden')
+    }
 
     // sidebar image bottom text toggle 
     sidebarImg.parentElement.querySelectorAll('div').forEach(element => {

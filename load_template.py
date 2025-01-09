@@ -43,13 +43,24 @@ def update_structure(template_path, target_files):
         print(f"File updated successfully: {file_path}")
 
 # Example usage
-template_file = "admin_view_template.html"
+# template_file = "admin_view_template.html"
+# target_files = [
+#     "admin_dashboard.html", 
+#     "admin_community.html", 
+#     "admin_content.html",
+#     "admin_analytics.html",
+#     "admin_copyright.html",
+#     "admin_earn.html",
+#     ]
+
+template_file = "content_dashboard_template.html"
 target_files = [
-    "admin_dashboard.html", 
-    "admin_community.html", 
-    "admin_content.html",
-    "admin_analytics.html",
-    "admin_copyright.html",
-    "admin_earn.html",
-    ]
+    'content_analytics.html',
+    'content_comments.html',
+    'content_copyright.html',
+    'content_details.html',
+    'content_editor.html',
+    'content_translate.html',
+
+]
 update_structure(template_file, target_files)
