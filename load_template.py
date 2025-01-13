@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import os
+import bs4
+formatter = bs4.formatter.HTMLFormatter(indent=4)
 
 def update_structure(template_path, target_files):
     # Load the template HTML
@@ -39,7 +41,7 @@ def update_structure(template_path, target_files):
         
         # Save the updated file
         with open(file_path, "w") as f:
-            f.write(str(template_soup))
+            f.write(str(template_soup.prettify(formatter=formatter)))
         print(f"File updated successfully: {file_path}")
 
 # Example usage
