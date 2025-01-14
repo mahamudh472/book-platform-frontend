@@ -1,252 +1,152 @@
-<!-- Main Content -->
-<main class="flex-1 p-4 ml-64">
-	<header class="flex items-center justify-between mb-6">
-		<div>
-			<h2 class="text-3xl font-semibold">Channel Content</h2>
-		</div>
-	</header>
-	<ul class="flex gap-4 font-medium text-gray-600 border-b-2">
-		<li class="p-2 cursor-pointer text-black border-b-2 font-bold border-gray-500">
-			Books
-		</li>
-		<li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-			Shorts
-		</li>
-		<li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-			Live
-		</li>
-		<li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-			Posts
-		</li>
-		<li class="hover:border-b-2 hover:border-gray-300 p-2 cursor-pointer">
-			Playlist
-		</li>
-	</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #page-content {
+            transform-origin: left;
+        }
 
-	<div class="relative overflow-x-auto">
-		<table class="w-full text-sm text-left rtl:text-right dark:text-gray-400">
-			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-				<tr>
-					<th scope="col" class="px-6 py-5 flex gap-3 items-center border-r h-full">
-						<input type="checkbox" name="" id="" /> Books
-					</th>
-					<th scope="col" class="px-2 py-3">Visibility</th>
-					<th scope="col" class="px-2 py-3">Restrictions</th>
-					<th scope="col" class="px-2 py-3">Date</th>
-					<th scope="col" class="px-2 py-3">Views</th>
-					<th scope="col" class="px-2 py-3">Comments</th>
-					<th scope="col" class="px-2 py-3 text-end">Likes(vs Dislikes)</th>
-				</tr>
-			</thead>
-			<tbody>
+        .book-page {
+            perspective: 1000px;
+        }
 
-				<!-- ------------------------ -->
-				<!-- Content item row -->
-				<!-- ------------------------ -->
-				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-					<th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-						<input type="checkbox" name="" id=""/>
-						<img src="book images/img1.jpg" alt="" class="h-20 w-12 object-cover" />
-						<div class="text-sm">
-							<div class="font-bold">Lorem ipsum dolor sit amet.</div>
-							<div class="text-gray-600">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Iste, cupiditate.
-							</div>
-						</div>
-					</th>
-					<td class="px-2 py-4 whitespace-nowrap">
-						<i class="fa fa-earth-asia"></i> <span>Public</span>
-						<i
-							class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-					</td>
-					<td class="px-2 py-6">None</td>
-					
-					<td class="px-2 py-4 whitespace-nowrap">
-						<div class="">
-							<div class="font-bold">Oct 15, 2024</div>
-							<div class="text-gray-600">Published</div>
-						</div>
-					</td>
-					<td class="px-2 py-4 text-end">3</td>
-					<td class="px-2 py-4 text-end">0</td>
-					<td class="px-2 py-4 text-end">
-						<div class="text-sm">
-							<div class="font-bold">100%</div>
-							<div class="text-gray-600">2 Likes</div>
-						</div>
-					</td>
+        .page {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
 
+        .page.flipped {
+            transform: rotateY(-180deg);
+        }
 
-				</tr>
+        .page-content {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
 
-				<!-- ------------------------ -->
-				<!-- Content item row -->
-				<!-- ------------------------ -->
-				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-					<th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-						<input type="checkbox" name="" id=""/>
-						<img src="book images/img2.jpg" alt="" class="h-20 w-12 object-cover" />
-						<div class="text-sm">
-							<div class="font-bold">Lorem ipsum dolor sit amet.</div>
-							<div class="text-gray-600">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Iste, cupiditate.
-							</div>
-						</div>
-					</th>
-					<td class="px-2 py-4 whitespace-nowrap">
-						<i class="fa fa-earth-asia"></i> <span>Public</span>
-						<i
-							class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-					</td>
-					<td class="px-2 py-6">None</td>
-					
-					<td class="px-2 py-4 whitespace-nowrap">
-						<div >
-							<div class="font-bold">Oct 15, 2024</div>
-							<div class="text-gray-600">Published</div>
-						</div>
-					</td>
-					<td class="px-2 py-4 text-end">3</td>
-					<td class="px-2 py-4 text-end">0</td>
-					<td class="px-2 py-4 text-end">
-						<div class="text-sm">
-							<div class="font-bold">100%</div>
-							<div class="text-gray-600">2 Likes</div>
-						</div>
-					</td>
+        .page-front {
+            z-index: 2;
+        }
 
+        .page-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="book-container" class="border rounded-xl shadow-md max-w-lg mx-auto bg-white overflow-hidden relative">
+        <!-- Cover -->
+        <div id="cover-container" class="relative">
+            <img class="mx-auto"
+                 src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg"
+                 alt="Book Cover">
+            <div class="absolute inset-0 flex items-end justify-center bg-gray-900 bg-opacity-50">
+                <button id="read-now-btn" class="bg-blue-600 text-white px-6 py-2 m-4 rounded-lg hover:bg-blue-700">
+                    Read Now
+                </button>
+            </div>
+        </div>
 
-				</tr>
+        <!-- Reader -->
+        <div id="reader-container" class="hidden p-6 relative max-h-[500px]">
+            <div class="book-page">
+                <div id="page-content" class="page bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="page-content page-front">
+                        <p class="text-justify text-gray-800" id="page-text">
+                            <!-- Front page content -->
+                        </p>
+                    </div>
+                    <div class="page-content page-back bg-gray-200">
+                        <p class="text-justify text-gray-800" id="page-back-text">
+                            <!-- Back page content -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-4 left-4 flex items-center space-x-4">
+                <button id="prev-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Previous</button>
+                <button id="next-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Next</button>
+            </div>
+            <div class="absolute bottom-4 right-4 flex items-center space-x-2">
+                <label for="page-number" class="text-gray-700">Jump to:</label>
+                <input id="page-number" type="number" class="border rounded px-2 py-1 w-16 text-center" min="1" value="1">
+            </div>
+            <div class="absolute top-4 right-4 flex items-center space-x-2">
+                <label for="ratio-selector" class="text-gray-700">Ratio:</label>
+                <select id="ratio-selector" class="border rounded px-2 py-1">
+                    <option value="1">1:1</option>
+                    <option value="3/4">3:4</option>
+                    <option value="16/9">16:9</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-				<!-- ------------------------ -->
-				<!-- Content item row -->
-				<!-- ------------------------ -->
-				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-					<th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-						<input type="checkbox" name="" id=""/>
-						<img src="book images/img3.jpg" alt="" class="h-20 w-12 object-cover" />
-						<div class="text-sm">
-							<div class="font-bold">Lorem ipsum dolor sit amet.</div>
-							<div class="text-gray-600">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Iste, cupiditate.
-							</div>
-						</div>
-					</th>
-					<td class="px-2 py-4 whitespace-nowrap">
-						<i class="fa fa-earth-asia"></i> <span>Public</span>
-						<i
-							class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-					</td>
-					<td class="px-2 py-6">None</td>
-					
-					<td class="px-2 py-4 whitespace-nowrap">
-						<div>
-							<div class="font-bold">Oct 15, 2024</div>
-							<div class="text-gray-600">Published</div>
-						</div>
-					</td>
-					<td class="px-2 py-4 text-end">3</td>
-					<td class="px-2 py-4 text-end">0</td>
-					<td class="px-2 py-4 text-end">
-						<div class="text-sm">
-							<div class="font-bold">100%</div>
-							<div class="text-gray-600">2 Likes</div>
-						</div>
-					</td>
+    <script>
+        const coverContainer = document.getElementById('cover-container');
+        const readerContainer = document.getElementById('reader-container');
+        const readNowBtn = document.getElementById('read-now-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const pageNumberInput = document.getElementById('page-number');
+        const pageText = document.getElementById('page-text');
+        const pageBackText = document.getElementById('page-back-text');
+        const ratioSelector = document.getElementById('ratio-selector');
+        const pageContent = document.getElementById('page-content');
+        const totalPages = 10; // Example total pages
+        let currentPage = 1;
 
+        // Example book pages content
+        const pagesContent = Array.from({ length: totalPages }, (_, i) => `This is the content of page ${i + 1}.`);
 
-				</tr>
+        // Show the reader when "Read Now" is clicked
+        readNowBtn.addEventListener('click', () => {
+            coverContainer.classList.add('hidden');
+            readerContainer.classList.remove('hidden');
+            loadPage(currentPage);
+        });
 
-				<!-- ------------------------ -->
-				<!-- Content item row -->
-				<!-- ------------------------ -->
-				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-					<th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-						<input type="checkbox" name="" id=""/>
-						<img src="book images/img4.jpeg" alt="" class="h-20 w-12 object-cover" />
-						<div class="text-sm">
-							<div class="font-bold">Lorem ipsum dolor sit amet.</div>
-							<div class="text-gray-600">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Iste, cupiditate.
-							</div>
-						</div>
-					</th>
-					<td class="px-2 py-4 whitespace-nowrap">
-						<i class="fa fa-earth-asia"></i> <span>Public</span>
-						<i
-							class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-					</td>
-					<td class="px-2 py-6">None</td>
-					
-					<td class="px-2 py-4 whitespace-nowrap">
-						<div class="">
-							<div class="font-bold">Oct 15, 2024</div>
-							<div class="text-gray-600">Published</div>
-						</div>
-					</td>
-					<td class="px-2 py-4 text-end">3</td>
-					<td class="px-2 py-4 text-end">0</td>
-					<td class="px-2 py-4 text-end">
-						<div class="text-sm">
-							<div class="font-bold">100%</div>
-							<div class="text-gray-600">2 Likes</div>
-						</div>
-					</td>
+        // Load the page content
+        function loadPage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            pageNumberInput.value = currentPage;
+            pageText.innerText = pagesContent[page - 1];
+            pageBackText.innerText = `Back of page ${currentPage}`; // Example back content
 
+            // Flip the page
+            pageContent.classList.remove('flipped');
+            setTimeout(() => {
+                pageContent.classList.add('flipped');
+            }, 100);
+        }
 
-				</tr>
+        // Handle next and previous buttons
+        nextBtn.addEventListener('click', () => loadPage(currentPage + 1));
+        prevBtn.addEventListener('click', () => loadPage(currentPage - 1));
 
-				<!-- ------------------------ -->
-				<!-- Content item row -->
-				<!-- ------------------------ -->
-				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 align-top text-xs">
-					<th scope="col" class="px-6 py-4 font-medium text-gray-900 dark:text-white flex gap-3 border-r">
-						<input type="checkbox" name="" id=""/>
-						<img src="book images/img5.jpg" alt="" class="h-20 w-12 object-cover" />
-						<div class="text-sm">
-							<div class="font-bold">Lorem ipsum dolor sit amet.</div>
-							<div class="text-gray-600">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Iste, cupiditate.
-							</div>
-						</div>
-					</th>
-					<td class="px-2 py-4 whitespace-nowrap">
-						<i class="fa fa-earth-asia"></i> <span>Public</span>
-						<i
-							class="fa fa-chevron-down cursor-pointer p-2 rounded-full hover:bg-gray-200"></i>
-					</td>
-					<td class="px-2 py-6">None</td>
-					
-					<td class="px-2 py-4 whitespace-nowrap">
-						<div class="">
-							<div class="font-bold">Oct 15, 2024</div>
-							<div class="text-gray-600">Published</div>
-						</div>
-					</td>
-					<td class="px-2 py-4 text-end">3</td>
-					<td class="px-2 py-4 text-end">0</td>
-					<td class="px-2 py-4 text-end">
-						<div class="text-sm">
-							<div class="font-bold">100%</div>
-							<div class="text-gray-600">2 Likes</div>
-						</div>
-					</td>
+        // Handle direct page input
+        pageNumberInput.addEventListener('change', () => {
+            const page = parseInt(pageNumberInput.value);
+            if (page >= 1 && page <= totalPages) {
+                loadPage(page);
+            }
+        });
 
-
-				</tr>
-
-				
-				
-				
-			</tbody>
-		</table>
-	</div>
-	<div class="flex">
-		
-	</div>
-</main>
+        // Handle ratio changes
+        ratioSelector.addEventListener('change', (event) => {
+            const ratio = event.target.value;
+            const [width, height] = ratio.split('/').map(Number);
+            const aspectRatio = height / width;
+            readerContainer.style.aspectRatio = `${width} / ${height}`;
+            readerContainer.style.height = `${readerContainer.offsetWidth * aspectRatio}px`;
+        });
+    </script>
+</body>
+</html>

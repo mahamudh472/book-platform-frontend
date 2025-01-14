@@ -104,11 +104,47 @@
 
         <main class="flex-1 flex space-x-3 p-4 container mx-auto" id="card-grid">
             <div class="w-3/5 space-y-2">
-                <div class="border rounded-xl shadow-md max-h-96">
-                    <img class="mx-auto"
-                        src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg"
-                        alt="">
-                </div>
+                <div class="container mx-auto">
+                    <!-- Book Container -->
+                    <div id="book-container" class="border rounded-xl shadow-md max-w-lg mx-auto bg-white overflow-hidden">
+                        <div id="cover-container" class="relative">
+                            <img class="mx-auto"
+                                 src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg"
+                                 alt="Book Cover">
+                            <button id="read-now-btn" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">
+                                Read Now
+                            </button>
+                        </div>
+            
+                        <!-- Reader Container -->
+                        <div id="reader-container" class="hidden p-6 relative">
+                            <div id="page-content" class="transition-transform duration-500 ease-in-out bg-gray-100 p-4 rounded-lg">
+                                <p class="text-justify text-gray-800" id="page-text">
+                                    <!-- Page content will load here -->
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <button id="prev-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Previous</button>
+                                <div>
+                                    <label for="page-number" class="mr-2">Page:</label>
+                                    <input id="page-number" type="number" class="border rounded w-12 text-center" min="1" value="1">
+                                    <span id="total-pages" class="ml-1">/ 10</span>
+                                </div>
+                                <button id="next-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Next</button>
+                                <div class="flex justify-center items-center">
+                                    <label for="ratio" class="mr-2">Ratio:</label>
+                                    <select id="ratio" class="border rounded px-2 py-1">
+                                        <option value="text-sm">Small</option>
+                                        <option value="text-base" selected>Normal</option>
+                                        <option value="text-lg">Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                
                 <div class="text-xl font-medium my-2">This is Book Title Lorem ipsum consectetur adipisicing elit.
                     Tenetur culpa iure recusandae error illum nam similique, nihil aliquid quia doloremque!</div>
                 <div class="flex justify-between">
@@ -746,7 +782,7 @@
         </main>
 
     </div>
-
+<script src="book_view.js"></script>
     <!-- <script src="main.js"></script> -->
 </body>
 
