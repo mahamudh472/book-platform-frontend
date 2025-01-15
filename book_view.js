@@ -6,11 +6,20 @@ const nextBtn = document.getElementById('next-btn');
 const pageNumberInput = document.getElementById('page-number');
 const pageText = document.getElementById('page-text');
 const ratioSelect = document.getElementById('ratio');
-const totalPages = 10; // Example total pages
 let currentPage = 1;
 
-// Example book pages content
-const pagesContent = Array.from({ length: totalPages }, (_, i) => `This is the content of page ${i + 1}.`);
+// Grab the full book text
+let content = document.getElementById("book_content").innerText.trim();
+
+// Split the content into pages of 50 words each
+let words = content.split(/\s+/);
+let pagesContent = [];
+for (let i = 0; i < words.length; i += 50) {
+    pagesContent.push(words.slice(i, i + 50).join(" "));
+}
+
+// Dynamically calculate total pages
+let totalPages = pagesContent.length;
 
 // Show the reader when "Read Now" is clicked
 readNowBtn.addEventListener('click', () => {
@@ -25,10 +34,12 @@ function loadPage(page) {
     currentPage = page;
     pageNumberInput.value = currentPage;
     pageText.innerText = pagesContent[page - 1];
+    
     // Add a flip effect
     pageText.classList.add('transform', 'rotate-y-180');
     setTimeout(() => pageText.classList.remove('transform', 'rotate-y-180'), 300);
 }
+
 
 // Change the text size based on ratio selection
 ratioSelect.addEventListener('change', () => {
