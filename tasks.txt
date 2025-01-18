@@ -1,0 +1,3 @@
+- Homepage side nav fix
+- Nav fix
+- Book view ratio

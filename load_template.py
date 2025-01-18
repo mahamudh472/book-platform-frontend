@@ -55,14 +55,19 @@ def update_structure(template_path, target_files):
 #     "admin_earn.html",
 #     ]
 
-template_file = "content_dashboard_template.html"
-target_files = [
-    'content_analytics.html',
-    'content_comments.html',
-    'content_copyright.html',
-    'content_details.html',
-    'content_editor.html',
-    'content_translate.html',
+# template_file = "content_dashboard_template.html"
+# target_files = [
+#     'content_analytics.html',
+#     'content_comments.html',
+#     'content_copyright.html',
+#     'content_details.html',
+#     'content_editor.html',
+#     'content_translate.html',
 
+# ]
+template_file = "user_view_template.html"
+target_files = [
+    'index.html',
+    'book_view.html'
 ]
 update_structure(template_file, target_files)
