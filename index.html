@@ -1,572 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>
-            YouTube Homepage
-        </title>
-        <link href="./dist/output.css" rel="stylesheet"/>
-        <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" referrerpolicy="no-referrer" rel="stylesheet">
-        </link>
-    </head>
-    <body>
-        <!-- Header (Navigation Bar) -->
-        <header class="bg-white shadow-md sticky top-0 z-50 px-4">
-            <div class="flex items-center justify-between py-3">
-                <!-- Logo and Hamburger -->
-                <div class="flex items-center space-x-4">
-                    <button class="px-2 rounded hover:bg-gray-200" id="menuToggle">
-                        <i class="fa fa-bars text-2xl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        YouTube Homepage
+    </title>
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        referrerpolicy="no-referrer" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <!-- Header (Navigation Bar) -->
+    <header class="bg-white shadow-md sticky top-0 z-50 px-4">
+        <div class="flex items-center justify-between py-3">
+            <!-- Logo and Hamburger -->
+            <div class="flex items-center space-x-4">
+                <button class="px-2 rounded hover:bg-gray-200" id="menuToggle">
+                    <i class="fa fa-bars text-2xl">
+                    </i>
+                </button>
+                <!-- <img src="https://via.placeholder.com/100x40?text=YouTube" alt="YouTube Logo" class="h-8"> -->
+                <a href="index.html">
+                    <img alt="" class="h-12" src="logo.png" />
+                </a>
+            </div>
+            <!-- Search Bar -->
+            <div class="md:flex items-center justify-center mx-4 flex-grow">
+                <input class="w-2/4 border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none"
+                    placeholder="Search" type="text" />
+                <button
+                    class="px-5 py-2 bg-gray-100 border-t border-b border-r border-gray-300 rounded-r-full hover:bg-gray-200">
+                    <i class="fa fa-search">
+                    </i>
+                </button>
+            </div>
+            <!-- Profile and Icons -->
+            <div class="flex items-center space-x-4">
+                <!-- logged in view  -->
+                <div class="relative hidden">
+                    <button class="dropdownButton p-2 border border-gray-300 rounded-full text-sm">
+                        <i class="fa fa-plus">
                         </i>
+                        Create
                     </button>
-                    <!-- <img src="https://via.placeholder.com/100x40?text=YouTube" alt="YouTube Logo" class="h-8"> -->
-                    <a href="index.html">
-                        <img alt="" class="h-12" src="logo.png"/>
-                    </a>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdownMenu absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden"
+                        id="dropdownMenu">
+                        <ul class="py-1">
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <i class="fa fa-upload mr-2">
+                                    </i>
+                                    Publish Book
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <i class="fa fa-file-pdf mr-2">
+                                    </i>
+                                    Upload Pdf
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <i class="fa fa-headset mr-2">
+                                    </i>
+                                    Live
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Search Bar -->
-                <div class="md:flex items-center justify-center mx-4 flex-grow">
-                    <input class="w-2/4 border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none" placeholder="Search" type="text"/>
-                    <button class="px-5 py-2 bg-gray-100 border-t border-b border-r border-gray-300 rounded-r-full hover:bg-gray-200">
-                        <i class="fa fa-search">
-                        </i>
+                <div class="relative hidden ">
+                    <button class="dropdownButton text-lg fa-regular fa-bell">
                     </button>
+                    <div class="dropdownMenu absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg hidden"
+                        id="dropdownMenu">
+                        <ul class="py-1">
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <div class="flex space-x-2">
+                                        <img alt="" class="h-10 w-10 rounded-full"
+                                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" />
+                                        <div>
+                                            <div>
+                                                This is notification title
+                                            </div>
+                                            <div class="text-xs font-thin">
+                                                ATN News -10 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr />
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <div class="flex space-x-2">
+                                        <img alt="" class="h-10 w-10 rounded-full"
+                                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" />
+                                        <div>
+                                            <div>
+                                                This is notification title
+                                            </div>
+                                            <div class="text-xs font-thin">
+                                                ATN News -10 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr />
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <div class="flex space-x-2">
+                                        <img alt="" class="h-10 w-10 rounded-full"
+                                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" />
+                                        <div>
+                                            <div>
+                                                This is notification title
+                                            </div>
+                                            <div class="text-xs font-thin">
+                                                ATN News -10 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr />
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    <div class="flex space-x-2">
+                                        <img alt="" class="h-10 w-10 rounded-full"
+                                            src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" />
+                                        <div>
+                                            <div>
+                                                This is notification title
+                                            </div>
+                                            <div class="text-xs font-thin">
+                                                ATN News -10 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Profile and Icons -->
-                <div class="flex items-center space-x-4">
-                    <!-- logged in view  -->
-                    <div class="relative">
-                        <button class="dropdownButton p-2 border border-gray-300 rounded-full text-sm">
-                            <i class="fa fa-plus">
-                            </i>
-                            Create
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div class="dropdownMenu absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden" id="dropdownMenu">
-                            <ul class="py-1">
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <i class="fa fa-upload mr-2">
-                                        </i>
-                                        Publish Book
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <i class="fa fa-file-pdf mr-2">
-                                        </i>
-                                        Upload Pdf
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <i class="fa fa-headset mr-2">
-                                        </i>
-                                        Live
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <button class="dropdownButton text-lg fa-regular fa-bell">
-                        </button>
-                        <div class="dropdownMenu absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg hidden" id="dropdownMenu">
-                            <ul class="py-1">
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <div class="flex space-x-2">
-                                            <img alt="" class="h-10 w-10 rounded-full" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"/>
-                                            <div>
-                                                <div>
-                                                    This is notification title
-                                                </div>
-                                                <div class="text-xs font-thin">
-                                                    ATN News -10 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr/>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <div class="flex space-x-2">
-                                            <img alt="" class="h-10 w-10 rounded-full" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"/>
-                                            <div>
-                                                <div>
-                                                    This is notification title
-                                                </div>
-                                                <div class="text-xs font-thin">
-                                                    ATN News -10 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr/>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <div class="flex space-x-2">
-                                            <img alt="" class="h-10 w-10 rounded-full" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"/>
-                                            <div>
-                                                <div>
-                                                    This is notification title
-                                                </div>
-                                                <div class="text-xs font-thin">
-                                                    ATN News -10 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr/>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        <div class="flex space-x-2">
-                                            <img alt="" class="h-10 w-10 rounded-full" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"/>
-                                            <div>
-                                                <div>
-                                                    This is notification title
-                                                </div>
-                                                <div class="text-xs font-thin">
-                                                    ATN News -10 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="p-2 rounded-full hover:bg-gray-200" onclick="location.href='admin_dashboard.html'">
-                        <svg class="h-6 w-6 text-gray-700" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2a10 10 0 110 20 10 10 0 010-20zm1 10.586l4.243 4.242-1.414 1.415L12 13.415l-3.829 3.828-1.415-1.415L11 10.586V6h2v4.586z">
+                <button class="p-2 hidden rounded-full hover:bg-gray-200"
+                    onclick="location.href='admin_dashboard.html'">
+                    <svg class="h-6 w-6 text-gray-700" fill="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2a10 10 0 110 20 10 10 0 010-20zm1 10.586l4.243 4.242-1.414 1.415L12 13.415l-3.829 3.828-1.415-1.415L11 10.586V6h2v4.586z">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Guest view  -->
+                <div class="relative">
+                    <button class="dropdownButton p-2 rounded-full hover:bg-gray-200">
+                        <svg class="h-6 w-6 text-gray-700" fill="currentColor" viewbox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z">
                             </path>
                         </svg>
                     </button>
-                    <!-- Guest view  -->
-                    <div class="relative hidden">
-                        <button class="dropdownButton p-2 rounded-full hover:bg-gray-200">
-                            <svg class="h-6 w-6 text-gray-700" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z">
-                                </path>
-                            </svg>
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div class="absolute dropdownMenu right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
-                            <ul class="py-1">
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        Option 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        Option 2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
-                                        Option 3
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="absolute dropdownMenu right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                        <ul class="py-1">
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Option 1
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Option 2
+                                </a>
+                            </li>
+                            <li>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                                    Option 3
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <a class="hidden" href="">
-                        <button class="border border-blue-700 p-2 text-blue-700 rounded-full text-sm">
-                            <i class="fa fa-user pr-1">
-                            </i>
-                            Sign in
-                        </button>
-                    </a>
+                </div>
+                <a class="">
+                    <button class="border border-blue-700 p-2 text-blue-700 rounded-full text-sm" id="openModalBtn">
+                        <i class="fa fa-user pr-1">
+                        </i>
+                        Sign in
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal" class="fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
+            <div class="bg-white rounded-lg shadow-lg w-96 p-6">
+                <div class="flex justify-between items-center pb-4 border-b">
+                    <h2 class="text-2xl font-semibold text-gray-700">Welcome Back</h2>
+                    <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">&times;</button>
+                </div>
+                <div class="flex justify-between border-b py-3">
+                    <button id="loginTab"
+                        class="flex-1 text-center py-2 text-blue-500 border-b-2 border-blue-500">Login</button>
+                    <button id="registerTab" class="flex-1 text-center py-2 text-gray-500">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="mt-4">
+                    <form>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-600">Email Address</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="block text-gray-600">Password</label>
+                            <input type="password" id="password" name="password"
+                                class="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                                placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Login</button>
+                    <div class="text-center my-3">
+                        Or, Continue with
+                    </div>
+                    <button type="button" class="w-full bg-red-500 text-white py-2 rounded-md">Google</button>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div id="registerForm" class="mt-4 hidden">
+                    <form>
+                        <div class="mb-4">
+                            <label for="reg-email" class="block text-gray-600">Email Address</label>
+                            <input type="email" id="reg-email" name="email"
+                                class="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="username" class="block text-gray-600">Username</label>
+                            <input type="text" id="username" name="username"
+                                class="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                                placeholder="Choose a username">
+                        </div>
+                        <div class="mb-4">
+                            <label for="reg-password" class="block text-gray-600">Password</label>
+                            <input type="password" id="reg-password" name="password"
+                                class="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                                placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Register</button>
+                        <div class="text-center my-3">
+                            Or, Continue with
+                        </div>
+                        <button type="button" class="w-full bg-red-500 text-white py-2 rounded-md">Google</button>
+                    </form>
                 </div>
             </div>
-        </header>
-        <!-- Main Content -->
-        <div class="flex min-h-screen">
-            <!-- Sidebar -->
-            <aside class="hidden md:block pt-20 fixed left-0 top-0 h-full w-64 bg-white shadow-lg p-4 overflow-y-auto transform -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0" id="sidebar">
-                <nav>
-                    <ul class="space-y-1 text-sm">
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-house text-lg w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Home
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-quote-left text-lg w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Lines
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa-regular fa-star w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Subscriptions
-                            </span>
-                        </li>
-                        <hr class="pt-2"/>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-history w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                History
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-pause w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Continue Reading
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa-regular fa-heart w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Favorites
-                            </span>
-                        </li>
-                        <hr class="pt-2"/>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-arrow-trend-up w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Treanding Books
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-clock w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Recently Published
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-fire-flame-curved w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Popular Books
-                            </span>
-                        </li>
-                        <hr class="pt-2"/>
-                        <div class="font-base p-2">
-                            Subscriptions
-                        </div>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
-                                <img alt="" class="h-6 w-6" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                            </div>
-                            <span class="text-gray-700">
-                                NTV News
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
-                                <img alt="" class="h-6 w-6" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                            </div>
-                            <span class="text-gray-700">
-                                NTV News
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
-                                <img alt="" class="h-6 w-6" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                            </div>
-                            <span class="text-gray-700">
-                                NTV News
-                            </span>
-                        </li>
-                        <hr class="pt-2"/>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa fa-gear text-lg w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Settings
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa-regular fa-circle-question text-lg w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Help
-                            </span>
-                        </li>
-                        <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
-                            <i class="fa-regular fa-message w-6">
-                            </i>
-                            <span class="text-gray-700">
-                                Feedback
-                            </span>
-                        </li>
-                        <!-- Add more menu items here -->
-                    </ul>
-                </nav>
-            </aside>
-            <!-- Video Grid -->
-            <main class="flex-1 p-4 ml-64" id="content">
-                <h2 class="text-xl font-bold text-gray-700 mb-4">
-                    Recommended Books
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer" onclick="location.href='book_view.html'">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <img alt="" class="h-10 w-10 mx-1 border rounded-full" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="book images/img1.jpg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <img alt="" class="h-10 w-10 mx-1 rounded-full border" src="profile_img/profile_img1.webp"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="book images/img2.jpg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <img alt="" class="h-10 w-10 rounded-full mx-1" src="profile_img/profile_img2.webp"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="book images/img3.jpg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between">
-                                <div>
-                                    <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img3.png"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="book images/img4.jpeg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between">
-                                <div>
-                                    <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img4.png"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="book images/img5.jpg"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between">
-                                <div>
-                                    <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img5.png"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="https://media.licdn.com/dms/image/D4E12AQG0hyhZmq0AyQ/article-cover_image-shrink_600_2000/0/1700488940348?e=2147483647&v=beta&t=eZtDe_xSbm65L-mR1tnM8vnfMpM3aWcSe8rw8o7sjSs"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between">
-                                <div>
-                                    <img alt="" class="h-10 w-10" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Card -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div class="relative bg-slate-300" style="padding-bottom: 150%;">
-                            <!-- 16:9 Aspect Ratio -->
-                            <img alt="Video Thumbnail" class="absolute object-cover h-full w-full" src="https://media.licdn.com/dms/image/D4E12AQG0hyhZmq0AyQ/article-cover_image-shrink_600_2000/0/1700488940348?e=2147483647&v=beta&t=eZtDe_xSbm65L-mR1tnM8vnfMpM3aWcSe8rw8o7sjSs"/>
-                        </div>
-                        <div class="p-1 my-2">
-                            <div class="flex justify-between">
-                                <div>
-                                    <img alt="" class="h-10 w-10" src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg"/>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">
-                                        Book Title
-                                    </h3>
-                                    <p class="text-xs text-gray-500">
-                                        Channel Name
-                                    </p>
-                                    <p class="text-xs text-gray-400">
-                                        10K views • 2 days ago
-                                    </p>
-                                </div>
-                                <div>
-                                    <button class="p-2" onclick="event.stopPropagation()">
-                                        <i class="fa fa-ellipsis-vertical">
-                                        </i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Repeat for more videos -->
-                </div>
-                <script>
-                    let halfMenu = true;
-                    let fullMenuHide = false;
-                </script>
-            </main>
         </div>
-        <script src="main.js">
-        </script>
-    </body>
+    </header>
+    <!-- Main Content -->
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside
+            class="hidden z-10 md:block pt-20 fixed left-0 top-0 h-full w-64 bg-white shadow-lg p-4 overflow-y-auto transform -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0"
+            id="sidebar">
+            <nav>
+                <ul class="space-y-1 text-sm">
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-house text-lg w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Home
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-quote-left text-lg w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Lines
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa-regular fa-star w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Subscriptions
+                        </span>
+                    </li>
+                    <hr class="pt-2" />
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-history w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            History
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-pause w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Continue Reading
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa-regular fa-heart w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Favorites
+                        </span>
+                    </li>
+                    <hr class="pt-2" />
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-arrow-trend-up w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Treanding Books
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-clock w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Recently Published
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-fire-flame-curved w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Popular Books
+                        </span>
+                    </li>
+                    <hr class="pt-2" />
+                    <div class="font-base p-2">
+                        Subscriptions
+                    </div>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
+                            <img alt="" class="h-6 w-6"
+                                src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                        </div>
+                        <span class="text-gray-700">
+                            NTV News
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
+                            <img alt="" class="h-6 w-6"
+                                src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                        </div>
+                        <span class="text-gray-700">
+                            NTV News
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <div class="overflow-hidden bg-red-600 rounded-lg max-w-28">
+                            <img alt="" class="h-6 w-6"
+                                src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                        </div>
+                        <span class="text-gray-700">
+                            NTV News
+                        </span>
+                    </li>
+                    <hr class="pt-2" />
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa fa-gear text-lg w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Settings
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa-regular fa-circle-question text-lg w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Help
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer menu-item">
+                        <i class="fa-regular fa-message w-6">
+                        </i>
+                        <span class="text-gray-700">
+                            Feedback
+                        </span>
+                    </li>
+                    <!-- Add more menu items here -->
+                </ul>
+            </nav>
+        </aside>
+        <!-- Video Grid -->
+        <main class="flex-1 p-4 ml-64" id="content">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">
+                Recommended Books
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
+                    onclick="location.href='book_view.html'">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <img alt="" class="h-10 w-10 mx-1 border rounded-full"
+                                    src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="book images/img1.jpg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <img alt="" class="h-10 w-10 mx-1 rounded-full border"
+                                    src="profile_img/profile_img1.webp" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="book images/img2.jpg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <img alt="" class="h-10 w-10 rounded-full mx-1" src="profile_img/profile_img2.webp" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="book images/img3.jpg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between">
+                            <div>
+                                <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img3.png" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="book images/img4.jpeg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between">
+                            <div>
+                                <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img4.png" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="book images/img5.jpg" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between">
+                            <div>
+                                <img alt="" class="h-10 w-10 rounded-full" src="profile_img/profile_img5.png" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="https://media.licdn.com/dms/image/D4E12AQG0hyhZmq0AyQ/article-cover_image-shrink_600_2000/0/1700488940348?e=2147483647&v=beta&t=eZtDe_xSbm65L-mR1tnM8vnfMpM3aWcSe8rw8o7sjSs" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between">
+                            <div>
+                                <img alt="" class="h-10 w-10"
+                                    src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="relative bg-slate-300" style="padding-bottom: 150%;">
+                        <!-- 16:9 Aspect Ratio -->
+                        <img alt="Video Thumbnail" class="absolute object-cover h-full w-full"
+                            src="https://media.licdn.com/dms/image/D4E12AQG0hyhZmq0AyQ/article-cover_image-shrink_600_2000/0/1700488940348?e=2147483647&v=beta&t=eZtDe_xSbm65L-mR1tnM8vnfMpM3aWcSe8rw8o7sjSs" />
+                    </div>
+                    <div class="p-1 my-2">
+                        <div class="flex justify-between">
+                            <div>
+                                <img alt="" class="h-10 w-10"
+                                    src="https://cdn.vectorstock.com/i/500p/53/42/user-member-avatar-face-profile-icon-vector-22965342.jpg" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-gray-800">
+                                    Book Title
+                                </h3>
+                                <p class="text-xs text-gray-500">
+                                    Channel Name
+                                </p>
+                                <p class="text-xs text-gray-400">
+                                    10K views • 2 days ago
+                                </p>
+                            </div>
+                            <div>
+                                <button class="p-2" onclick="event.stopPropagation()">
+                                    <i class="fa fa-ellipsis-vertical">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for more videos -->
+            </div>
+            <script>
+                let halfMenu = true;
+                let fullMenuHide = false;
+            </script>
+        </main>
+    </div>
+    <script src="main.js">
+    </script>
+</body>
+
 </html>

@@ -68,6 +68,7 @@ def update_structure(template_path, target_files):
 template_file = "user_view_template.html"
 target_files = [
     'index.html',
-    'book_view.html'
+    'book_view.html',
+    'profile.html'
 ]
 update_structure(template_file, target_files)

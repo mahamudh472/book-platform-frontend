@@ -1,152 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Reader</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        #page-content {
-            transform-origin: left;
-        }
-
-        .book-page {
-            perspective: 1000px;
-        }
-
-        .page {
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-
-        .page.flipped {
-            transform: rotateY(-180deg);
-        }
-
-        .page-content {
-            backface-visibility: hidden;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .page-front {
-            z-index: 2;
-        }
-
-        .page-back {
-            transform: rotateY(180deg);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div id="book-container" class="border rounded-xl shadow-md max-w-lg mx-auto bg-white overflow-hidden relative">
-        <!-- Cover -->
-        <div id="cover-container" class="relative">
-            <img class="mx-auto"
-                 src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Rich_Dad_Poor_Dad-Robert_T_Kiyosaki-a28a3-150615.jpg"
-                 alt="Book Cover">
-            <div class="absolute inset-0 flex items-end justify-center bg-gray-900 bg-opacity-50">
-                <button id="read-now-btn" class="bg-blue-600 text-white px-6 py-2 m-4 rounded-lg hover:bg-blue-700">
-                    Read Now
-                </button>
-            </div>
-        </div>
+<body class="bg-gray-100">
 
-        <!-- Reader -->
-        <div id="reader-container" class="hidden p-6 relative max-h-[500px]">
-            <div class="book-page">
-                <div id="page-content" class="page bg-gray-100 p-6 rounded-lg shadow-md">
-                    <div class="page-content page-front">
-                        <p class="text-justify text-gray-800" id="page-text">
-                            <!-- Front page content -->
-                        </p>
-                    </div>
-                    <div class="page-content page-back bg-gray-200">
-                        <p class="text-justify text-gray-800" id="page-back-text">
-                            <!-- Back page content -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute bottom-4 left-4 flex items-center space-x-4">
-                <button id="prev-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Previous</button>
-                <button id="next-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Next</button>
-            </div>
-            <div class="absolute bottom-4 right-4 flex items-center space-x-2">
-                <label for="page-number" class="text-gray-700">Jump to:</label>
-                <input id="page-number" type="number" class="border rounded px-2 py-1 w-16 text-center" min="1" value="1">
-            </div>
-            <div class="absolute top-4 right-4 flex items-center space-x-2">
-                <label for="ratio-selector" class="text-gray-700">Ratio:</label>
-                <select id="ratio-selector" class="border rounded px-2 py-1">
-                    <option value="1">1:1</option>
-                    <option value="3/4">3:4</option>
-                    <option value="16/9">16:9</option>
-                </select>
-            </div>
-        </div>
+<!-- Button to open the modal -->
+<button id="openModalBtn" class="px-6 py-2 bg-blue-500 text-white rounded-md">Open Login/Register Modal</button>
+
+<!-- Modal Structure -->
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
+  <div class="bg-white rounded-lg shadow-lg w-96 p-6">
+    <div class="flex justify-between items-center pb-4 border-b">
+      <h2 class="text-2xl font-semibold text-gray-700">Welcome Back</h2>
+      <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">&times;</button>
+    </div>
+    <div class="flex justify-between border-b py-3">
+      <button id="loginTab" class="flex-1 text-center py-2 text-blue-500 border-b-2 border-blue-500">Login</button>
+      <button id="registerTab" class="flex-1 text-center py-2 text-gray-500">Register</button>
     </div>
 
-    <script>
-        const coverContainer = document.getElementById('cover-container');
-        const readerContainer = document.getElementById('reader-container');
-        const readNowBtn = document.getElementById('read-now-btn');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const pageNumberInput = document.getElementById('page-number');
-        const pageText = document.getElementById('page-text');
-        const pageBackText = document.getElementById('page-back-text');
-        const ratioSelector = document.getElementById('ratio-selector');
-        const pageContent = document.getElementById('page-content');
-        const totalPages = 10; // Example total pages
-        let currentPage = 1;
+    <!-- Login Form -->
+    <div id="loginForm" class="mt-4">
+      <form>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-600">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full p-2 mt-1 border border-gray-300 rounded-md" placeholder="Enter your email">
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-600">Password</label>
+          <input type="password" id="password" name="password" class="w-full p-2 mt-1 border border-gray-300 rounded-md" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Login</button>
+      </form>
+    </div>
 
-        // Example book pages content
-        const pagesContent = Array.from({ length: totalPages }, (_, i) => `This is the content of page ${i + 1}.`);
+    <!-- Register Form -->
+    <div id="registerForm" class="mt-4 hidden">
+      <form>
+        <div class="mb-4">
+          <label for="reg-email" class="block text-gray-600">Email Address</label>
+          <input type="email" id="reg-email" name="email" class="w-full p-2 mt-1 border border-gray-300 rounded-md" placeholder="Enter your email">
+        </div>
+        <div class="mb-4">
+          <label for="username" class="block text-gray-600">Username</label>
+          <input type="text" id="username" name="username" class="w-full p-2 mt-1 border border-gray-300 rounded-md" placeholder="Choose a username">
+        </div>
+        <div class="mb-4">
+          <label for="reg-password" class="block text-gray-600">Password</label>
+          <input type="password" id="reg-password" name="password" class="w-full p-2 mt-1 border border-gray-300 rounded-md" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-        // Show the reader when "Read Now" is clicked
-        readNowBtn.addEventListener('click', () => {
-            coverContainer.classList.add('hidden');
-            readerContainer.classList.remove('hidden');
-            loadPage(currentPage);
-        });
+<script>
+  // Modal and tab logic
+  const modal = document.getElementById("modal");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const loginTab = document.getElementById("loginTab");
+  const registerTab = document.getElementById("registerTab");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
 
-        // Load the page content
-        function loadPage(page) {
-            if (page < 1 || page > totalPages) return;
-            currentPage = page;
-            pageNumberInput.value = currentPage;
-            pageText.innerText = pagesContent[page - 1];
-            pageBackText.innerText = `Back of page ${currentPage}`; // Example back content
+  // Open modal
+  openModalBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
 
-            // Flip the page
-            pageContent.classList.remove('flipped');
-            setTimeout(() => {
-                pageContent.classList.add('flipped');
-            }, 100);
-        }
+  // Close modal
+  closeModalBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
 
-        // Handle next and previous buttons
-        nextBtn.addEventListener('click', () => loadPage(currentPage + 1));
-        prevBtn.addEventListener('click', () => loadPage(currentPage - 1));
+  // Switch to login form
+  loginTab.addEventListener("click", () => {
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+    loginTab.classList.add("text-blue-500", "border-b-2", "border-blue-500");
+    registerTab.classList.remove("text-blue-500", "border-b-2", "border-blue-500");
+  });
 
-        // Handle direct page input
-        pageNumberInput.addEventListener('change', () => {
-            const page = parseInt(pageNumberInput.value);
-            if (page >= 1 && page <= totalPages) {
-                loadPage(page);
-            }
-        });
+  // Switch to register form
+  registerTab.addEventListener("click", () => {
+    registerForm.classList.remove("hidden");
+    loginForm.classList.add("hidden");
+    registerTab.classList.add("text-blue-500", "border-b-2", "border-blue-500");
+    loginTab.classList.remove("text-blue-500", "border-b-2", "border-blue-500");
+  });
+</script>
 
-        // Handle ratio changes
-        ratioSelector.addEventListener('change', (event) => {
-            const ratio = event.target.value;
-            const [width, height] = ratio.split('/').map(Number);
-            const aspectRatio = height / width;
-            readerContainer.style.aspectRatio = `${width} / ${height}`;
-            readerContainer.style.height = `${readerContainer.offsetWidth * aspectRatio}px`;
-        });
-    </script>
 </body>
 </html>
